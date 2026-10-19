@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
     <title>login page</title>
 </head>
 <body>
-    
+    <main class="login">
+        <h1>Log in</h1>
+        
+        <form action="#" method="post">
+            <div class="form-field">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" autocomplete="username">
+            </div>
+
+            <div class="form-field">
+                <div class="password-label">
+                    <label for="password">Password</label>
+                    <button class="password-toggle" type="button" aria-controls="password" aria-pressed="false">Show</button>
+                </div>
+                <input type="password" name="password" id="password" autocomplete="current-password">
+            </div>
+
+
+            <button class="submit-button" type="submit">Log in</button>
+        </form>
+
+       
+    </main>
+
+    <script>
+        const passwordInput = document.querySelector("#password");
+        const passwordToggle = document.querySelector(".password-toggle");
+
+        passwordToggle.addEventListener("click", () => {
+            const isVisible = passwordInput.type === "text";
+            passwordInput.type = isVisible ? "password" : "text";
+            passwordToggle.textContent = isVisible ? "Show" : "Hide";
+            passwordToggle.setAttribute("aria-pressed", String(!isVisible));
+        });
+    </script>
 </body>
 </html>
