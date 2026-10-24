@@ -1,13 +1,13 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 USERNAME = "admin"
 PASSWORD = "admin"
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="./static/")
 
 @app.route("/")
 def home():
-    return "<h1>welcome to the hood</h1>"
+    return render_template("index.html")
 
 @app.route("/login", methods = ["POST"])
 def login():
@@ -19,4 +19,4 @@ def login():
         return "failer"
 
 if __name__=="__main__":
-    app.run("0.0.0.0",80,True) # wee can use here another address and it"s depend on the network addressing
+    app.run("0.0.0.0",5000,True) # wee can use here another address and it"s depend on the network addressing
