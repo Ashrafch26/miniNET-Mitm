@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <title>{{ "success" if success else "failer" }}</title>
+</head>
+<body>
+    <main class="login">
+        <h1>{{ "success" if success else "failer" }}</h1>
+        <a class="submit-button" href="{{ url_for('home') }}"><button>Back</button></a>
+    </main>
+</body>
+</html>
