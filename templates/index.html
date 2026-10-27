@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
     <title>login page</title>
 </head>
 <body>
     <main class="login">
         <h1>Log in</h1>
         
-        <form action="#" method="post">
+        <form action="{{ url_for('login') }}" method="post">
             <div class="form-field">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" autocomplete="username">
@@ -28,9 +28,9 @@
             <button class="submit-button" type="submit">Log in</button>
         </form>
 
-       
     </main>
 
+    <script src="{{ url_for('static', filename='handle.js') }}"> </script>
     
 </body>
 </html>
